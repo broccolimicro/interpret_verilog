@@ -17,7 +17,7 @@ struct ExpressionImporter : parse_expression::Importer<arithmetic::Expression> {
 	ExpressionImporter(ucs::Netlist symbols, bool autoDefine = false);
 	~ExpressionImporter();
 
-	arithmetic::Expression import_term(const parse_expression::expression::argument &syntax, tokenizer *tokens) const override;
+	arithmetic::Expression import_term(const parse_expression::expression::argument &syntax, tokenizer *tokens, int arg) const override;
 	arithmetic::Expression import_unary(parse_expression::operation op, arithmetic::Expression expr, tokenizer *tokens) const override;
 	arithmetic::Expression import_binary(parse_expression::operation op, arithmetic::Expression left, arithmetic::Expression right, tokenizer *tokens) const override;
 	arithmetic::Expression import_group(parse_expression::operation op, vector<arithmetic::Expression> args, tokenizer *tokens) const override;

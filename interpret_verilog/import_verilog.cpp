@@ -16,7 +16,7 @@ ExpressionImporter::ExpressionImporter(ucs::Netlist symbols, bool autoDefine) : 
 ExpressionImporter::~ExpressionImporter() {
 }
 
-arithmetic::Expression ExpressionImporter::import_term(const parse_expression::expression::argument &syntax, tokenizer *tokens) const {
+arithmetic::Expression ExpressionImporter::import_term(const parse_expression::expression::argument &syntax, tokenizer *tokens, int arg) const {
 	if (syntax.type < 0 or syntax.type >= (int)config::cfg->literals.size() or not syntax.ptr) {
 		return arithmetic::Expression::undef();
 	}
